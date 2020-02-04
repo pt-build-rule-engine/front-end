@@ -56,4 +56,4 @@ const EditForm = (props) => {
 
 // }
 
-export default connect(null, { addContact })(EditForm);
+export default connect(null, { editItem })(EditForm);
