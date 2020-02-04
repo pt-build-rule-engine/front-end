@@ -9,7 +9,7 @@ const initialState = {
         name: '',
         company: '',
         email: '',
-        phonenumber: '',
+        phoneNumber: '',
         password: ''
     },
     isLoading: false,

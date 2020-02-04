@@ -6,7 +6,9 @@ import {
 
 const initialState = {
     contactInfo: {
-        
+        email: '',
+        company: '',
+        name: ''
     },
     isLoading: false,
     error: null
