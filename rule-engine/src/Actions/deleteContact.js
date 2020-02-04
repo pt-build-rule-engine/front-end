@@ -1,12 +1,12 @@
-import api from '../utils/api';
+import api from '../Utls/api';
 
 export const DELETE_ITEMS_START = "DELETE_ITEMS_START";
 export const DELETE_ITEMS_SUCCESS = "DELETE_ITEMS_SUCCESS";
 export const DELETE_ITEMS_ERROR = "DELETE_ITEMS_ERROR";
 
 
-export const deleteItems = (item, id) => dispatch => {
-        dispatch({ type: DELETE_ITEMS_START})
+export const deleteContact = (item, id) => dispatch => {
+        dispatch({ type: DELETE_ITEMS_START })
 
         api()
             .delete(`/items/${id}`, item)

@@ -1,29 +1,33 @@
 import {
-    DELETE_ITEMS_START,
-    DELETE_ITEMS_SUCCESS,
-    DELETE_ITEMS_ERROR
-} from '../actions/deleteItems';
+    ADD_START,
+    ADD_SUCCESS,
+    ADD_ERROR
+} from '../Actions/addContact';
 
 const initialState = {
-    deletedItem: {},
+    addedItem: {
+        name: '',
+        company: '',
+        email: ''
+    },
     isLoading: false,
     error: null
 };
 
 export function reducer(state = initialState, action) {
     switch (action.type) {
-        case DELETE_ITEMS_START:
+        case ADD_START:
             return {
                 ...state,
                 isLoading: true
             };
-        case DELETE_ITEMS_SUCCESS: 
+        case ADD_SUCCESS: 
             return {
                 ...state,
-                deletedItem: action.payload,
+                addedItem: action.payload,
                 isLoading: false
             };
-        case DELETE_ITEMS_ERROR: 
+        case ADD_ERROR: 
             return {
                 ...state,
                 error: action.payload,

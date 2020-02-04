@@ -6,7 +6,10 @@ import {
 
 
 const initialState = {
-    user: {},
+    user: {
+        name: '',
+        password: ''
+    },
     isLoading: false,
     error: null
 };
@@ -31,6 +34,6 @@ export function reducer(state = initialState, action) {
             isLoading: false
             };
         default:
-        return state;
+            return state;
     }
 };

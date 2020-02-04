@@ -1,5 +1,4 @@
-
-import api from "../utils/api"
+import api from '../Utls/api';
 
 export const EDIT_START = "EDIT_START"
 export const EDIT_SUCCESS = "EDIT_SUCCESS"

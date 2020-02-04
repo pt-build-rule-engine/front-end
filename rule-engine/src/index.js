@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { reducer as loginReducer } from './Reducers/Login';
 import { reducer as signupReducer } from './Reducers/SignUp';
+import { reducer as addReducer } from './Reducers/addContact';
 
 
 
@@ -20,7 +21,7 @@ const rootReducer = combineReducers({
     newUser: signupReducer,
     // items: fetchItemsReducer,
     // userInfo: fetchUserByIdReducer,
-    // newItem: addItemReducer,
+    addedItem: addReducer,
     // userBio: updateUserBioReducer,
 });
 

@@ -8,7 +8,7 @@ export const getToken = () =>{
 //This is an axios helper with some predefined values
 const api = () => {
     return axios.create({
-        baseURL: 'http://localhost:5000',
+        baseURL: 'https://bw-rule-engine.herokuapp.com',
         headers: {
             Authorization: getToken(),
         }
