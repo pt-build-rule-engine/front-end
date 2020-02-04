@@ -5,8 +5,13 @@ import {
 } from "../Actions/SignUp";
 
 const initialState = {
-    newUser: {},
-
+    newUser: {
+        name: '',
+        company: '',
+        email: '',
+        phonenumber: '',
+        password: ''
+    },
     isLoading: false,
     error: null
 };

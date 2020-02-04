@@ -6,13 +6,19 @@ import LogIn from "./Components/LogIn.js";
 import LogOut from "./Components/LogOut.js";
 import NavBar from "./Components/NavBar.js";
 import SignUp from "./Components/SignUp.js";
+import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
 
 /*-*/
 function App() {
   return (
     <main>
-      <Route exact path="/login"  component={LogIn} />
+      <Route path='/' component={NavBar}/>
+      <Route path="/signup"  component={SignUp} />
+      <PrivateRoute path="/login"  component={LogIn} />
+      <PrivateRoute path="/logout"  component={LogOut} />
+      <PrivateRoute path="/addform"  component={Addform} />
+      <PrivateRoute path="/contacts"  component={ContactList} />
     </main>
   );
 }

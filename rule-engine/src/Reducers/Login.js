@@ -6,7 +6,10 @@ import {
 
 
 const initialState = {
-    user: {},
+    user: {
+        name: '',
+        password: ''
+    },
     isLoading: false,
     error: null
 };
