@@ -20,6 +20,7 @@ export function reducer(state = initialState, action) {
             return {
             ...state,
             isLoading: true,
+            error: null
             };
         case LOGIN_SUCCESS:
             return {

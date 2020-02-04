@@ -11,11 +11,12 @@ const ContactCard = (props) => {
             props.deleteContact()
         }
     }
+
     return (
         <div>
 
             <button onClick={props.deleteHandler}>Delete</button>
-            <Link to={'/edit-contact/${props.contact.id}'}>Edit</Link>
+            <Link to={`/edit-contact/${props.contact.id}`}>Edit</Link>
         </div>
     );
 };

@@ -15,12 +15,13 @@ export function reducer(state = initialState, action) {
         case GET_START:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true, 
+                error: null
             };
         case GET_SUCCESS:
             return {
                 ...state,
-                items: action.payload,
+                contacts: [action.payload],
                 isLoading: false
             };
         case GET_ERROR:
