@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 const SignUp = (props) => {
 
-    const handleSubmit = props => {
+    const handleSubmit = event => {
 
         event.preventDefault();
     };
