@@ -1,7 +1,9 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
 import * as Yup from "yup";
+// the signUp referenced at the bottom of this file depends on an AdvancedReact component that I cannot build yet
 
 const SignUp = (props) => {
 
@@ -58,7 +60,12 @@ const SignUp = (props) => {
                 {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
             </label>
                
-           </Form>     
+           </Form>
+           <br/>
+           <br/>
+           <p> Don't have an account? Click here to create one:</p>
+           <Button color="success" tag={Link} to='/signup' component={Signup}>SignUp</Button>{' '}  
+           <br/>   
         </div>
     );
 }
