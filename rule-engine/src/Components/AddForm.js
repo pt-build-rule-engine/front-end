@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import addContact from '../Actions/addContact';
+import { addContact } from '../Actions/addContact';
 import { connect } from 'react-redux';
 
 const AddForm = (props) => {

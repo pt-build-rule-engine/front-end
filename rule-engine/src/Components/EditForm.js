@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import editItem from '../Actions/editItem';
+import { editItem } from '../Actions/editItem';
 import { connect } from 'react-redux';
 
 const EditForm = (props) => {

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import deleteContact from '../Actions/deleteContact';
+import { deleteContact } from '../Actions/deleteContact';
 
 const ContactCard = (props) => {
 
     const deleteHandler = (e) => {
         e.preventDefault()
         if(window.confirm('Are you sure you want to delete this contact?')){
-            props.deleteContact
+            props.deleteContact()
         }
     }
     return (
@@ -21,4 +21,4 @@ const ContactCard = (props) => {
 };
 
 
-export default connect(null, { deleteContact })(mContactCard);
+export default connect(null, { deleteContact })(ContactCard);

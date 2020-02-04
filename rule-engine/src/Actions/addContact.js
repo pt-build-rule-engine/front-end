@@ -1,11 +1,11 @@
-import api from '../utils/api';
+import api from '../Utls/api';
 
 export const ADD_START = "ADD_START";
 export const ADD_SUCCESS = "ADD_SUCCESS";
 export const ADD_ERROR = "ADD_ERROR";
 
 
-export const deleteItems = (item, id) => dispatch => {
+export const addContact = (item, id) => dispatch => {
         dispatch({ type: ADD_START})
 
         api()

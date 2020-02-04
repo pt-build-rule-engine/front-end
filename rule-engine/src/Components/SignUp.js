@@ -13,9 +13,8 @@ const SignUp = (props) => {
 
     return (
         <div>
-           <br>
+           <br/>
               <h1>Welcome to Logic Tree!</h1>
-           </br> 
            <Form onSubmit={handleSubmit}>'
            
             <label>

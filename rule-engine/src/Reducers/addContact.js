@@ -2,10 +2,14 @@ import {
     ADD_START,
     ADD_SUCCESS,
     ADD_ERROR
-} from '../actions/deleteItems';
+} from '../Actions/addContact';
 
 const initialState = {
-    addedItem: {},
+    addedItem: {
+        name: '',
+        company: '',
+        email: ''
+    },
     isLoading: false,
     error: null
 };
@@ -29,5 +33,7 @@ export function reducer(state = initialState, action) {
                 error: action.payload,
                 isLoading: false
             }
+        default:
+            return state;
     }
 };
