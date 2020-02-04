@@ -2,7 +2,7 @@ import {
     SIGNUP_START,
     SIGNUP_SUCCESS,
     SIGNUP_ERROR
-} from "../actions/sighup";
+} from "../Actions/SignUp";
 
 const initialState = {
     newUser: {},

@@ -2,7 +2,7 @@ import {
     LOGIN_START,
     LOGIN_SUCCESS,
     LOGIN_ERROR,
-} from "../actions/Login";
+} from "../Actions/Login";
 
 
 const initialState = {
