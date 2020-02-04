@@ -22,7 +22,8 @@ export function reducer(state = initialState, action) {
         case SIGNUP_START:
             return {
             ...state,
-            isLoading: true
+            isLoading: true, 
+            error: null
             };
         case SIGNUP_SUCCESS:
             return {

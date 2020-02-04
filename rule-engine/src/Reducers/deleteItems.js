@@ -1,7 +1,7 @@
 import {
-    DELETE_ITEMS_START,
-    DELETE_ITEMS_SUCCESS,
-    DELETE_ITEMS_ERROR
+    DELETE_START,
+    DELETE_SUCCESS,
+    DELETE_ERROR
 } from '../actions/deleteItems';
 
 const initialState = {
@@ -12,18 +12,19 @@ const initialState = {
 
 export function reducer(state = initialState, action) {
     switch (action.type) {
-        case DELETE_ITEMS_START:
+        case DELETE_START:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true, 
+                error: null
             };
-        case DELETE_ITEMS_SUCCESS: 
+        case DELETE_SUCCESS: 
             return {
                 ...state,
                 deletedItem: action.payload,
                 isLoading: false
             };
-        case DELETE_ITEMS_ERROR: 
+        case DELETE_ERROR: 
             return {
                 ...state,
                 error: action.payload,
