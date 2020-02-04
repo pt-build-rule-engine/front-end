@@ -1,14 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withFormik, Form, Field, yupToFormErrors } from "formik";
+import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
 
 const SignUp = (props) => {
 
     const handleSubmit = event => {
 
         event.preventDefault();
+        let auth={companyName: values.companyName, email: value.email, phoneNumber: value.phoneNumber}
+
+        api()
+          .post("https://guidr-project.herokuapp.com/users/login", auth)
+          .then(response => {
+
+             console.log(response.data.token);
+             console.log(response.data.id);
+          })
+
+        .catch(error => {
+            console.log(error);
+        })
     };
 
     return (
@@ -23,21 +35,27 @@ const SignUp = (props) => {
                 <Field
                     type="text"
                     placeholder="Company Name"
+                    value={value.companyName}
                 />
+                 {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
             </label>
             <label>
                 Email:
                 <Field 
                     type="text"
                     placeholder="Email"
+                    value={value.email}
                 />
+                  {touched.email && errors.email && <p color="danger">{errors.email}</p>}
             </label>
             <label>
                 Phone Number:
                 <Field
                     type="text"
                     placeholder="Phone Number"
+                    value={value.phoneNumber}
                 />
+                {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
             </label>
                
            </Form>     
@@ -46,11 +64,11 @@ const SignUp = (props) => {
 }
 
 const enhancedForm = withFormik ({
-    mapPropsToValues({companyName, email, phoneNumber} => ({
+    mapPropsToValues: ({companyName, email, phoneNumber}) => ({
 
         companyName: companyName ||" ",
         email: email || " ",
-        phoneNumber: phoneNumber || " "
+        phoneNumber: phoneNumber || " ",
 
     }),
 
@@ -67,7 +85,7 @@ const enhancedForm = withFormik ({
 
         phoneNumber: Yup.string()
         .min(10, 'Phone number needs to at least be 10 characters')
-        .required('Phone Number is required')
+        .required('Phone Number is required'),
 
     })
 })(MyInnerForm);
