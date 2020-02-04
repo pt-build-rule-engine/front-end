@@ -1,4 +1,4 @@
-import api from "../utils/api"
+import api from "../Utls/api";
 
 
 export const SIGNUP_START = "SIGNUP_START";
