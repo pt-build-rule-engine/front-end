@@ -6,7 +6,7 @@ export const LOGIN_ERROR = "LOGIN_ERROR";
 
 export const login = (credentials) => dispatch => {
     dispatch({ type: LOGIN_START });
-    api().post("/login", credentials)
+    api().post("/api/auth/login", credentials)
         .then(res => {
             dispatch({ type: LOGIN_SUCCESS, payload: res.data })
             localStorage.setItem("token", res.data.token);
