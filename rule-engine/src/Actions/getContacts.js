@@ -8,7 +8,7 @@ export const getContacts = () => dispatch => {
 
     dispatch({ type: GET_START });
 
-    api().get("/items")
+    api().get("/api/contacts")
         .then(res => {
             dispatch({ type: GET_SUCCESS, payload: res.data });
         })
