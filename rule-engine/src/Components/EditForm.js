@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { editContact } from '../Actions/editContact';
+import { getIndContact } from '../Actions/getIndContact';
 import { connect } from 'react-redux';
 
 const EditForm = (props) => {
@@ -10,6 +11,10 @@ const EditForm = (props) => {
         email: ''
     })
 
+    useEffect(()=>{
+        setEditedContact(props.getIndContact(props.match.params.id))
+    },[])
+
     const handleChange = e => {
         setEditedContact({
             ...editedContact, 
@@ -19,7 +24,7 @@ const EditForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        props.editItem(editedContact)
+        props.editContact(editedContact)
     }
 
     return (
@@ -56,4 +61,4 @@ const EditForm = (props) => {
 
 // }
 
-export default connect(null, { editContact })(EditForm);
+export default connect(null, { editContact, getIndContact })(EditForm);
