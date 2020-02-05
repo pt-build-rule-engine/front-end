@@ -25,6 +25,7 @@ const rootReducer = combineReducers({
     // userBio: updateUserBioReducer,
 });
 
+
 // create our store or "global state object"
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
