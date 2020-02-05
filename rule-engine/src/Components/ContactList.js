@@ -3,6 +3,8 @@ import { withFormik, Form, Field } from "formik";
 import styled from 'styled-components';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import ContactCard from "./ContactCard";
+
 
 export default function CharacterList(props) {
     // TODO: Add useState to track data from useEffect
@@ -116,5 +118,4 @@ export default function CharacterList(props) {
       </StyledDiv>
     );
   }
-
 
