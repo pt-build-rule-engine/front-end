@@ -42,7 +42,7 @@ const SignUp = (props) => {
                 Company:
                 <Field
                     type="text"
-                    name="companyName"
+                    name="companyname"
                     placeholder="Company Name"
                 />
                  {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
@@ -60,7 +60,7 @@ const SignUp = (props) => {
                 Phone Number:
                 <Field
                     type="text"
-                    name="phoneNumber"
+                    name="phonenumber"
                     placeholder="Phone Number"
                 />
                 {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
