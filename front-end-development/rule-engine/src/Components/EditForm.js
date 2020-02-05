@@ -1,49 +1,49 @@
 import React, { useState } from 'react';
-import { addContact } from '../Actions/addContact';
+import { editContact } from '../Actions/editContact';
 import { connect } from 'react-redux';
 
-const AddForm = (props) => {
+const EditForm = (props) => {
 
-    const [newContact, setNewContact] = useState({
+    const [editedContact, setEditedContact] = useState({
         company: '',
         name: '',
         email: ''
     })
 
     const handleChange = e => {
-        setNewContact({
-            ...newContact, 
+        setEditedContact({
+            ...editedContact, 
             [e.target.name]: e.target.value
         })
     }
 
     const handleSubmit = e => {
         e.preventDefault()
-        props.addContact(newContact)
+        props.editItem(editedContact)
     }
 
     return (
         <div>
-            <h2>Add Contact</h2>
+            <h2>Edit Contact</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     name='company'
                     type='text'
-                    value={newContact.company}
+                    value={editedContact.company}
                     placeholder='Company'
                     onChange={handleChange}
                 />
                 <input
                     name='email'
                     type='text'
-                    value={newContact.email}
+                    value={editedContact.email}
                     placeholder='Email'
                     onChange={handleChange}
                 />
                 <input
                     name='name'
                     type='text'
-                    value={newContact.name}
+                    value={editedContact.name}
                     placeholder='Name'
                     onChange={handleChange}
                 />
@@ -56,4 +56,4 @@ const AddForm = (props) => {
 
 // }
 
-export default connect(null, { addContact })(AddForm);
+export default connect(null, { editContact })(EditForm);
