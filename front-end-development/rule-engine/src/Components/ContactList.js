@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-export default function CharacterList(props) {
+export default function ContactList(props) {
     // TODO: Add useState to track data from useEffect
     const [characters, setCharacters] = useState();
     const [searchArg, setSearchArg] = useState();
@@ -76,7 +76,7 @@ export default function CharacterList(props) {
           </Form>
         </StyledDiv>
         <StyledDiv>
-          <CharacterList searchArg={searchTerm} />
+          <ContactList searchArg={searchTerm} />
         </StyledDiv>
       </div>
     );
