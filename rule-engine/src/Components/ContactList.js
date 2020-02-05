@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContactCard from "./ContactCard";
 
 const ContactList = () => {
@@ -8,4 +8,4 @@ const ContactList = () => {
     );
 };
 
-export default ContactList;
+export default ContactList; 
