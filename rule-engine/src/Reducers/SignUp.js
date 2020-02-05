@@ -5,8 +5,13 @@ import {
 } from "../Actions/SignUp";
 
 const initialState = {
-    newUser: {},
-
+    newUser: {
+        name: '',
+        company: '',
+        email: '',
+        phoneNumber: '',
+        password: ''
+    },
     isLoading: false,
     error: null
 };
@@ -17,7 +22,8 @@ export function reducer(state = initialState, action) {
         case SIGNUP_START:
             return {
             ...state,
-            isLoading: true
+            isLoading: true, 
+            error: null
             };
         case SIGNUP_SUCCESS:
             return {
@@ -32,6 +38,6 @@ export function reducer(state = initialState, action) {
             isLoading: false
             }
         default:
-        return state;
+            return state;
     }
 };

@@ -3,7 +3,6 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
 import * as Yup from "yup";
-// the signUp referenced at the bottom of this file depends on an AdvancedReact component that I cannot build yet
 
 const SignUp = (props) => {
 
@@ -20,15 +19,31 @@ const SignUp = (props) => {
         <div>
            <br/>
               <h1>Welcome to Logic Tree!</h1>
-           <br/> 
            <Form onSubmit={handleSubmit}>'
            
+           <label>
+               Name:
+               <Field 
+               type='text'
+               name='name'
+               placeholder="Name"
+
+               />
+           </label>
+           <label>
+               Password:
+               <Field 
+               type='password'
+               name='password'
+               placeholder="Password"
+               />
+           </label>
             <label>
-                Company Name:
+                Company:
                 <Field
                     type="text"
+                    name="companyName"
                     placeholder="Company Name"
-                    value={values.companyName}
                 />
                  {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
             </label>
@@ -36,8 +51,8 @@ const SignUp = (props) => {
                 Email:
                 <Field 
                     type="text"
+                    name="email"
                     placeholder="Email"
-                    value={values.email}
                 />
                   {touched.email && errors.email && <p color="danger">{errors.email}</p>}
             </label>
@@ -45,8 +60,8 @@ const SignUp = (props) => {
                 Phone Number:
                 <Field
                     type="text"
+                    name="phoneNumber"
                     placeholder="Phone Number"
-                    value={values.phoneNumber}
                 />
                 {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
             </label>
@@ -57,8 +72,10 @@ const SignUp = (props) => {
 }
 
 const enhancedForm = withFormik ({
-    mapPropsToValues: ({companyName, email, phoneNumber}) => ({
+    mapPropsToValues: ({name, password, companyName, email, phoneNumber}) => ({
 
+        name: name || " ",
+        password: password || " ",
         companyName: companyName ||" ",
         email: email || " ",
         phoneNumber: phoneNumber || " ",
@@ -66,6 +83,14 @@ const enhancedForm = withFormik ({
     }),
 
     validationSchema: Yup.object().shape({
+
+        name: Yup.string()
+        .min(2, 'Invalid name')
+        .required('Name is required'),
+
+        password: Yup.string()
+        .min(2, 'Invalid Password')
+        .required('Password is required'),
 
         companyName: Yup.string()
         .max(20, 'CompanyName must be shorter than 20 characters')
