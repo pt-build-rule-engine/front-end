@@ -4,7 +4,6 @@ import ContactCard from "./ContactCard";
 const ContactList = () => {
     return (
         <div>
-            
         </div>
     );
 };

@@ -2,11 +2,13 @@ import {
     EDIT_START,
     EDIT_SUCCESS,
     EDIT_ERROR
-} from "../actions/editItem";
+} from "../actions/editContact";
 
 const initialState = {
-    contactInfo: {
-        
+    editedItem: {
+        email: '',
+        company: '',
+        name: ''
     },
     isLoading: false,
     error: null
@@ -17,12 +19,13 @@ export function reducer(state = initialState, action) {
         case EDIT_START:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true, 
+                error: null
             };
         case EDIT_SUCCESS:
             return {
                 ...state,
-                contactInfo: action.payload,
+                editedItem: action.payload,
                 isLoading: false
             };
     case EDIT_ERROR:
