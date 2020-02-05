@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { editItem } from '../Actions/editItem';
+import { editContact } from '../Actions/editContact';
 import { connect } from 'react-redux';
 
 const EditForm = (props) => {
@@ -56,4 +56,4 @@ const EditForm = (props) => {
 
 // }
 
-export default connect(null, { editItem })(EditForm);
+export default connect(null, { editContact })(EditForm);
