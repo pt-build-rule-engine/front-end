@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'reactstrap';
-import {NavbarBrand, Nav, NavItem, NavLink, Collapse, NavbarToggler, Navbar} from "reactstrap";
+import { NavbarBrand, Nav, NavItem, NavLink, Collapse, NavbarToggler, Navbar, Button } from "reactstrap";
 import logo from '../Images/streemly_logo.png';
 
 const NavBar = () => {
@@ -16,11 +15,11 @@ const NavBar = () => {
     return (
         <div>
             <Navbar className="streemly-red">
-                <NavbarBrand href="/contacts" className="mr-auto"> <img className='streemly-logo' src={logo} width='120' height='50' alt='streemly logo' /></NavbarBrand>
-                <NavbarToggler onClick={toggleNavBar}>
+                <NavbarBrand href="/contacts" className="mr-auto"></NavbarBrand>
+                <NavbarToggler onClick={toggleNavBar} className="mr-2">
                    <img className="streemly-logo" src={logo} width='120' height='50' alt="guider logo" />
                 </NavbarToggler>
-                <Collapse isOpen={collapsed} onClick={menuClick} >
+                <Collapse isOpen={collapsed} onClick={menuClick}>
                     <Nav navbar>
                         <NavItem className="streemly-red2">
                            <NavLink href="/login">Login</NavLink>
