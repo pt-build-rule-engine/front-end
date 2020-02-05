@@ -7,22 +7,13 @@ import * as Yup from "yup";
 
 const SignUp = (props) => {
 
+    const { values, touched, errors } = props;
+
     const handleSubmit = event => {
 
         event.preventDefault();
-        let auth={companyName: values.companyName, email: value.email, phoneNumber: value.phoneNumber}
+        let auth={companyName: values.companyName, email: values.email, phoneNumber: values.phoneNumber}
 
-        api()
-          .post("https://guidr-project.herokuapp.com/users/login", auth)
-          .then(response => {
-
-             console.log(response.data.token);
-             console.log(response.data.id);
-          })
-
-        .catch(error => {
-            console.log(error);
-        })
     };
 
     return (
@@ -37,7 +28,7 @@ const SignUp = (props) => {
                 <Field
                     type="text"
                     placeholder="Company Name"
-                    value={value.companyName}
+                    value={values.companyName}
                 />
                  {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
             </label>
@@ -46,7 +37,7 @@ const SignUp = (props) => {
                 <Field 
                     type="text"
                     placeholder="Email"
-                    value={value.email}
+                    value={values.email}
                 />
                   {touched.email && errors.email && <p color="danger">{errors.email}</p>}
             </label>
@@ -55,17 +46,12 @@ const SignUp = (props) => {
                 <Field
                     type="text"
                     placeholder="Phone Number"
-                    value={value.phoneNumber}
+                    value={values.phoneNumber}
                 />
                 {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
             </label>
                
            </Form>
-           <br/>
-           <br/>
-           <p> Don't have an account? Click here to create one:</p>
-           <Button color="success" tag={Link} to='/signup' component={Signup}>SignUp</Button>{' '}  
-           <br/>   
         </div>
     );
 }
@@ -95,6 +81,6 @@ const enhancedForm = withFormik ({
         .required('Phone Number is required'),
 
     })
-})(MyInnerForm);
+})(SignUp);
 
 export default SignUp;
