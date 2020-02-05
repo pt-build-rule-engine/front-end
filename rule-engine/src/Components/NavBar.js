@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'reactstrap';
 import {NavbarBrand, Nav, NavItem, NavLink, Collapse, NavbarToggler, Navbar} from "reactstrap";
 import logo from '../Images/streemly_logo.png';
 
@@ -29,6 +30,9 @@ const NavBar = () => {
                         </NavItem>
                         <NavItem className="streemly-red2">
                            <NavLink href="/directory">Directory</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <Button>Add Contact</Button>
                         </NavItem>
                     </Nav>
                 </Collapse>
