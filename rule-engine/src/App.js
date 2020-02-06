@@ -1,27 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, withRouter } from 'react-router-dom';
+import Addform from "./Components/AddForm.js";
+import ContactList from "./Components/ContactList.js";
+import LogIn from "./Components/LogIn.js";
+import LogOut from "./Components/LogOut.js";
+import NavBar from "./Components/NavBar.js";
+import SignUp from "./Components/SignUp.js";
+import PrivateRoute from './Components/PrivateRoute';
+import EditForm from './Components/EditForm';
+import Footer from './Components/Footer';
 import './App.css';
 
 /*-*/
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Route path='/' component={NavBar}/>
+      <Route path="/signup"  component={SignUp} />
+      <Route path="/login"  render={(props=><LogIn {...props}/>)}/>
+      <PrivateRoute path="/logout"  component={LogOut} />
+      <PrivateRoute path="/addform"  component={Addform} />
+      <PrivateRoute path="/directory"  component={ContactList} />
+      <PrivateRoute path="/edit-contact/:id"  component={EditForm} />
+    </main>
   );
 }
 
-export default App;
+export default withRouter(App);
