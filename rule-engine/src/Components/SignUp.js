@@ -12,17 +12,19 @@ const SignUp = (props) => {
     return (
         <div>
               <h1>Welcome to Logic Tree!</h1>
-           <Form>'
+           <Form>
            
            <label>
                Name:
                <Field 
                type='text'
                name='name'
+               value={values.name}
                placeholder="Name"
-
                />
            </label>
+           <br/>
+           <br/>
            <label>
                Password:
                <Field 
@@ -31,40 +33,51 @@ const SignUp = (props) => {
                placeholder="Password"
                />
            </label>
+           <br/>
+           <br/>
             <label>
                 Company:
                 <Field
                     type="text"
                     name="companyName"
+                    value={values.companyName}
                     placeholder="Company Name"
                 />
                  {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
             </label>
+            <br/>
+            <br/>
             <label>
                 Email:
                 <Field 
                     type="text"
                     name="email"
+                    value={values.email}
                     placeholder="Email"
                 />
                   {touched.email && errors.email && <p color="danger">{errors.email}</p>}
             </label>
+            <br/>
+            <br/>
             <label>
                 Phone Number:
                 <Field
                     type="text"
                     name="phonenumber"
+                    value={values.phoneNumber}
                     placeholder="Phone Number"
                 />
                 {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
             </label>
-               
+            <br/>
+            <br/>   
            </Form>
+           <Button>Sign Up</Button>
         </div>
     );
 }
 
-const enhancedForm = withFormik({
+const EnhancedForm = withFormik({
     mapPropsToValues: ({name, password, companyName, email, phoneNumber}) => ({
 
         name: name || "",
@@ -117,4 +130,4 @@ const enhancedForm = withFormik({
 
 })(SignUp);
 
-export default SignUp;
+export default EnhancedForm;
