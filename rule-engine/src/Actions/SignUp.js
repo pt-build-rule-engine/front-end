@@ -9,7 +9,7 @@ export const signup = (credentials) => dispatch => {
 
     dispatch({ type: SIGNUP_START });
 
-    api().post("/api/auth/login", credentials)
+    api().post("/api/auth/register", credentials)
         .then(res => {
             dispatch({ type: SIGNUP_SUCCESS, payload: res.data })
             // localStorage.setItem("token", res.data.token);

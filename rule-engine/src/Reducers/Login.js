@@ -7,7 +7,7 @@ import {
 
 const initialState = {
     user: {
-        name: '',
+        email: '',
         password: ''
     },
     isLoading: false,

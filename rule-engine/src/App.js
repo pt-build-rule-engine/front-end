@@ -17,7 +17,7 @@ function App() {
     <main>
       <Route path='/' component={NavBar}/>
       <Route path="/signup"  component={SignUp} />
-      <Route path="/login"  component={LogIn} />
+      <Route path="/login"  render={(props=><LogIn {...props}/>)}/>
       <PrivateRoute path="/logout"  component={LogOut} />
       <PrivateRoute path="/addform"  component={Addform} />
       <PrivateRoute path="/contacts"  component={ContactList} />

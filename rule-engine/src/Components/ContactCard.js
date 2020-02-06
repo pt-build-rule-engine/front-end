@@ -1,9 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
-import { deleteContact } from '../Actions/deleteContact';
 
 const ContactCard = (props) => {
+    const StyledDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: lightblue;
+    border: 1.2px solid black;
+    color:white;
+    font-family: 'Bangers', cursive;
+    `;
 
     const deleteHandler = (e) => {
         e.preventDefault()
@@ -13,13 +22,14 @@ const ContactCard = (props) => {
     }
 
     return (
-        <div>
-
+        <StyledDiv>
+            <p>{props.item.email}</p>
+            <p>{props.item.companyName}</p>
+            <p>{props.item.name}</p>
+            <Link to={`/edit-contact/${props.item.id}`}>Edit</Link>
             <button onClick={props.deleteHandler}>Delete</button>
-            <Link to={`/edit-contact/${props.contact.id}`}>Edit</Link>
-        </div>
+        </StyledDiv>
     );
-};
+}
 
-
-export default connect(null, { deleteContact })(ContactCard);
+export default ContactCard;

@@ -2,7 +2,7 @@ import {
     DELETE_START,
     DELETE_SUCCESS,
     DELETE_ERROR
-} from '../actions/deleteItems';
+} from '../Actions/deleteItems';
 
 const initialState = {
     deletedItem: {},
