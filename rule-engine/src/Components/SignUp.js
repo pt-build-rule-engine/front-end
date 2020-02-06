@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
+import { withFormik } from "formik";
 import * as Yup from "yup";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import axios from 'arxios';
 import { signup } from '../Actions/SignUp';
 
 const SignUp = (props) => {
