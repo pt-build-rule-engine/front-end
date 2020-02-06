@@ -1,4 +1,4 @@
-import api from "../utils/api"
+import api from '../Utls/api';
 
 export const GET_START = "GET_START";
 export const GET_SUCCESS = "GET_SUCCESS";
@@ -10,6 +10,7 @@ export const getContacts = () => dispatch => {
 
     api().get("/api/contacts")
         .then(res => {
+            // console.log(res.data)
             dispatch({ type: GET_SUCCESS, payload: res.data });
         })
         .catch(err => {
