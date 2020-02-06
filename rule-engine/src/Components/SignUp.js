@@ -11,7 +11,7 @@ const SignUp = (props) => {
 
     return (
         <div>
-              <h1>Welcome to Logic Tree!</h1>
+              <h1>Sign Up for Logic Tree!</h1>
            <Form>
            
            <label>
