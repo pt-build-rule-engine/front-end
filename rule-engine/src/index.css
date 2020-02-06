@@ -11,27 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.streemly-red {
-  background-color: white;
-  border-bottom: 3px solid #A69300;
-
-}
-.streemly-red2 a {
-  background-color: white;
-  color: #A69300;
-  text-decoration: none;
-}
-
-.streemly-red2 a:hover {
-  background-color: #A69300;
-  color: white;
-  text-decoration: none;
-}
-
-.streemly-red-button {
-    background-color: #A69300;
-    color: white;
-    text-decoration: none;
-    border-radius: 3px;
-}
