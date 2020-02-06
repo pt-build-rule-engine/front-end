@@ -21,7 +21,7 @@ export function reducer(state = initialState, action) {
         case GET_SUCCESS:
             return {
                 ...state,
-                contacts: [action.payload],
+                contacts: [...action.payload],
                 isLoading: false
             };
         case GET_ERROR:

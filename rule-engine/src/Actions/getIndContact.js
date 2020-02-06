@@ -1,4 +1,4 @@
-import api from "../utils/api"
+import api from "../Utls/api"
 
 export const GET_IND_START = "GET_IND_START";
 export const GET_IND_SUCCESS = "GET_IND_SUCCESS";
