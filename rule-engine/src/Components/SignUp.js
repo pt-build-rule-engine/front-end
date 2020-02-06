@@ -3,23 +3,16 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import axios from 'axios';
 
 const SignUp = (props) => {
 
     const { values, touched, errors } = props;
 
-    const handleSubmit = event => {
-
-        event.preventDefault();
-        let auth={companyName: values.companyName, email: values.email, phoneNumber: values.phoneNumber}
-
-    };
-
     return (
         <div>
-           <br/>
               <h1>Welcome to Logic Tree!</h1>
-           <Form onSubmit={handleSubmit}>'
+           <Form>'
            
            <label>
                Name:
@@ -42,7 +35,7 @@ const SignUp = (props) => {
                 Company:
                 <Field
                     type="text"
-                    name="companyname"
+                    name="companyName"
                     placeholder="Company Name"
                 />
                  {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
@@ -71,14 +64,14 @@ const SignUp = (props) => {
     );
 }
 
-const enhancedForm = withFormik ({
+const enhancedForm = withFormik({
     mapPropsToValues: ({name, password, companyName, email, phoneNumber}) => ({
 
-        name: name || " ",
-        password: password || " ",
-        companyName: companyName ||" ",
-        email: email || " ",
-        phoneNumber: phoneNumber || " ",
+        name: name || "",
+        password: password || "",
+        companyName: companyName || "",
+        email: email || "",
+        phoneNumber: phoneNumber || "",
 
     }),
 
@@ -105,7 +98,23 @@ const enhancedForm = withFormik ({
         .min(10, 'Phone number needs to at least be 10 characters')
         .required('Phone Number is required'),
 
-    })
+    }),
+
+    handleSubmit(values, { setStatus }) {
+
+        axios
+         .post("", values)
+         .then(response => {
+            console.log(response);
+            setStatus(response);
+        })
+         .catch(error => {
+            console.log(error);
+        
+        })
+
+    }
+
 })(SignUp);
 
 export default SignUp;
