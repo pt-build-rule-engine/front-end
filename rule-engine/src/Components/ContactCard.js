@@ -21,13 +21,17 @@ const ContactCard = (props) => {
         }
     }
 
+    console.log(props.name)
+
     return (
         <StyledDiv>
-            <p>{props.item.email}</p>
-            <p>{props.item.companyName}</p>
-            <p>{props.item.name}</p>
-            <Link to={`/edit-contact/${props.item.id}`}>Edit</Link>
-            <button onClick={props.deleteHandler}>Delete</button>
+      
+        <p>{props.item.email}</p>
+        <p>{props.item.companyName}</p>
+        <p>{props.item.name}</p>
+        <Link to={`/edit-contact/${props.item.id}`}>Edit</Link>
+        <button onClick={deleteHandler}>Delete</button>
+    
         </StyledDiv>
     );
 }

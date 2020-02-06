@@ -39,13 +39,16 @@ const ContactList = (props) => {
         props.getContacts()
     },[])
 
+
     return (
         <section className="character-list">
-            {console.log(props.contacts)}
-            <SearchForm/>
+            <SearchForm
             contacts={props.contacts}
+            />
             {props.contacts.map((item) => {
+                console.log('props.contacts: ', props.contacts)
                 console.log("creating character card for ", item)
+                
                 return (
                     <ContactCard 
                         key={item.id} 
@@ -58,11 +61,6 @@ const ContactList = (props) => {
     );
 };
 
-// const mapStateToProps = ({contacts}) => {
-//     return 
-//         {contacts}
-    
-// };
 const mapStateToProps = (state) => {
     return {
         contacts: state.contacts.contacts
