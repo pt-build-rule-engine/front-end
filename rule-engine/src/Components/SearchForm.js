@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from "formik";
+import styled from 'styled-components';
 
 
-const SearchForm = (contacts) => {
+const SearchForm = (props) => {
 
     const StyledDiv = styled.div`
     display: flex;
