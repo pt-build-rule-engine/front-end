@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar.js";
 import SignUp from "./Components/SignUp.js";
 import PrivateRoute from './Components/PrivateRoute';
 import EditForm from './Components/EditForm';
+import Footer from './Components/Footer';
 import './App.css';
 
 /*-*/
