@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { connect } from 'react-redux';
+import { login } from '../Actions/Login';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import styled from 'styled-components';
 import "../App.css";
 
-export default function Login(props) {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +15,12 @@ export default function Login(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const credentials = {
+      email: email,
+      password: password,
+    };
+    props.login(credentials)
+    props.history.push('/contacts')
   }
 
   return (
@@ -41,3 +50,5 @@ export default function Login(props) {
     </div>
   );
 }
+
+export default connect(null, {login})(Login)

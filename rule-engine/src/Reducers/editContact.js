@@ -2,7 +2,7 @@ import {
     EDIT_START,
     EDIT_SUCCESS,
     EDIT_ERROR
-} from "../actions/editContact";
+} from "../Actions/editContact";
 
 const initialState = {
     editedItem: {
