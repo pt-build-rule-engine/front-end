@@ -2,7 +2,7 @@ import {
     GET_START,
     GET_SUCCESS,
     GET_ERROR,
-} from "../actions/getContacts";
+} from "../Actions/getContacts";
 
 const initialState = {
     contacts: [],
