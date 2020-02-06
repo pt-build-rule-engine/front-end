@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from "formik";
 
 
-const SearchForm = (status) => {
+const SearchForm = (contacts) => {
 
     const StyledDiv = styled.div`
     display: flex;
@@ -10,11 +10,11 @@ const SearchForm = (status) => {
     padding-top: 20px;
     `;
 
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState(props.contacts);
 
     useEffect(() => {
-        setSearchTerm(status);
-    }, [status]);
+        setSearchTerm(contacts);
+    }, [contacts]);
 
     let errorStyle = {
         color: "red"
@@ -34,6 +34,11 @@ const SearchForm = (status) => {
     );
 }
 
+const searchResultDisplay = search =>{
+    const results = searchTerm.filter(datum=>datum.name.tolowercase().includes(search.lowerCase()));
+    setSearchTerm(results);
+};
+
 const FormikSearchForm = withFormik({
     mapPropsToValues({ search }) {
         return {
@@ -41,10 +46,11 @@ const FormikSearchForm = withFormik({
         };
     },
 
-    handleSubmit(values, { setStatus }) {
-        setStatus(values);
+    handleSubmit(values, {dispatch }) {
+        dispatch(values);
     }
-
+ 
 })(SearchForm);
+
 
 export default SearchForm;

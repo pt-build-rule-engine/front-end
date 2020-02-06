@@ -43,6 +43,7 @@ const ContactList = (props) => {
         <section className="character-list">
             {console.log(props.contacts)}
             <SearchForm/>
+            contacts={props.contacts}
             {props.contacts.map((item) => {
                 console.log("creating character card for ", item)
                 return (
