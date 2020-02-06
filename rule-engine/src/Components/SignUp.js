@@ -121,4 +121,4 @@ const EnhancedForm = withFormik({
 
 })(SignUp);
 
-export default EnhancedForm;
+export default connect (null, {signup})(EnhancedForm);
