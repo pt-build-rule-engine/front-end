@@ -57,8 +57,15 @@ const ContactList = (props) => {
     );
 };
 
-const mapStateToProps = state => {
-    contacts: state.contacts.contacts
+// const mapStateToProps = ({contacts}) => {
+//     return 
+//         {contacts}
+    
+// };
+const mapStateToProps = (state) => {
+    return {
+        contacts: state.contacts.contacts
+    }   
 };
 
 

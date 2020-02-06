@@ -26,7 +26,7 @@ const ContactCard = (props) => {
             <p>{props.item.email}</p>
             <p>{props.item.companyName}</p>
             <p>{props.item.name}</p>
-            <Link to={`/edit-contact/${props.contact.id}`}>Edit</Link>
+            <Link to={`/edit-contact/${props.item.id}`}>Edit</Link>
             <button onClick={props.deleteHandler}>Delete</button>
         </StyledDiv>
     );
