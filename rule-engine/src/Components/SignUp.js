@@ -1,80 +1,86 @@
-import React from 'react';
-import { Button } from 'reactstrap';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
+import { withFormik } from "formik";
 import * as Yup from "yup";
-import axios from 'axios';
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { connect } from 'react-redux';
+import { signup } from '../Actions/SignUp';
 
 const SignUp = (props) => {
 
-    const { values, touched, errors } = props;
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [name, setName] = useState("");
+    const [companyName, setCompanyName] = useState("");
+
+        const validateForm = () =>  {
+            return email.length > 0 && password.length > 0 && phoneNumber > 0 && name > 0 && companyName > 0;
+          }
+
+        const handleSubmit = event =>  {
+            event.preventDefault();
+            const credentials = {
+              email: email,
+              password: password,
+              phoneNumber: phoneNumber,
+              name: name,
+              companyName: companyName,
+            };
+            props.login(credentials)
+            props.history.push('/contacts')
+          }
 
     return (
-        <div>
-            <h1>Sign Up for Logic Tree!</h1>
-            <Form>
-
-                <label>
-                    Name:
-               <Field
-                        type='text'
-                        name='name'
-                        value={values.name}
-                        placeholder="Name"
-                    />
-                </label>
-                <br />
-                <br />
-                <label>
-                    Password:
-               <Field
-                        type='password'
-                        name='password'
-                        placeholder="Password"
-                    />
-                </label>
-                <br />
-                <br />
-                <label>
-                    Company:
-                <Field
-                        type="text"
-                        name="companyName"
-                        value={values.companyName}
-                        placeholder="Company Name"
-                    />
-                    {touched.companyName && errors.username && <p color="danger">{errors.companyName}</p>}
-                </label>
-                <br />
-                <br />
-                <label>
-                    Email:
-                <Field
-                        type="text"
-                        name="email"
-                        value={values.email}
-                        placeholder="Email"
-                    />
-                    {touched.email && errors.email && <p color="danger">{errors.email}</p>}
-                </label>
-                <br />
-                <br />
-                <label>
-                    Phone Number:
-                <Field
-                        type="text"
-                        name="phonenumber"
-                        value={values.phoneNumber}
-                        placeholder="Phone Number"
-                    />
-                    {touched.phoneNumber && errors.phoneNumber && <p color="danger">{errors.phoneNumber}</p>}
-                </label>
-                <br />
-                <br />
-            </Form>
-            <Button>Sign Up</Button>
+        <div className="Login">
+          <form onSubmit={handleSubmit}>
+            <FormGroup controlId="email" bsSize="large">
+              <FormLabel>Email</FormLabel>
+              <FormControl
+                autoFocus
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </FormGroup>
+            <FormGroup controlId="password" bsSize="large">
+              <FormLabel>Password</FormLabel>
+              <FormControl
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type="password"
+              />
+            </FormGroup>
+            <FormGroup controlId="name" bsSize="large">
+              <FormLabel>Name</FormLabel>
+              <FormControl
+                value={name}
+                onChange={e => setName(e.target.value)}
+                type="name"
+              />
+            </FormGroup>
+            <FormGroup controlId="companyName" bsSize="large">
+              <FormLabel>CompanyName</FormLabel>
+              <FormControl
+                value={companyName}
+                onChange={e => setCompanyName(e.target.value)}
+                type="companyName"
+              />
+            </FormGroup>
+            <FormGroup controlId="password" bsSize="large">
+              <FormLabel>phoneNumber</FormLabel>
+              <FormControl
+                value={phoneNumber}
+                onChange={e => setPhoneNumber(e.target.value)}
+                type="phoneNumber"
+              />
+            </FormGroup>
+            <Button block bsSize="large" disabled={!validateForm()} type="submit">
+              SignUp
+            </Button>
+          </form>
         </div>
-    );
+      );
 }
 
 const EnhancedForm = withFormik({
@@ -113,21 +119,6 @@ const EnhancedForm = withFormik({
 
     }),
 
-    handleSubmit(values, { setStatus }) {
-
-        axios
-            .post("", values)
-            .then(response => {
-                console.log(response);
-                setStatus(response);
-            })
-            .catch(error => {
-                console.log(error);
-
-            })
-
-    }
-
 })(SignUp);
 
-export default EnhancedForm;
+export default connect(null, {signup})(EnhancedForm);
