@@ -11,7 +11,7 @@ export const addContact = (newContact) => dispatch => {
         api()
             .post(`/api/contacts`, newContact)
             .then(res => {
-                dispatch({ type: ADD_SUCCESS, payload: res.data})
+                dispatch({ type: ADD_SUCCESS})
                 // dispatch({ type: ADD_SUCCESS, payload: res.data})
             })
             .catch(err => {

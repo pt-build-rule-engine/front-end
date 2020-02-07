@@ -15,11 +15,16 @@ const ContactCard = (props) => {
     `;
 
     const deleteHandler = (e) => {
-        e.preventDefault()
         if(window.confirm('Are you sure you want to delete this contact?')){
-            props.deleteContact()
+            console.log('from card: ', props.item.id)
+            props.deleteContact(props.item.id)
+            props.getContacts()
         }
     }
+
+    // useEffect(()=>{
+    //     window.location.reload()
+    // },[props.setCompState])
 
     // console.log(props.name)
 

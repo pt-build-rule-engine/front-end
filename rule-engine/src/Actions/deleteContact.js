@@ -5,14 +5,14 @@ export const DELETE_SUCCESS = "DELETE_SUCCESS";
 export const DELETE_ERROR = "DELETE_ERROR";
 
 
-export const deleteContact = (item, id) => dispatch => {
+export const deleteContact = (id) => dispatch => {
+        console.log('from action: ', id)
         dispatch({ type: DELETE_START })
 
         api()
-            .delete(`/items/${id}`, item)
+            .delete(`/api/contacts/${id}`)
             .then(res => {
-                dispatch({ type: DELETE_SUCCESS, payload: res.data})
-                console.log(item)
+                dispatch({ type: DELETE_SUCCESS })
             })
             .catch(err => {
                 dispatch({ type: DELETE_ERROR, payload: err.error })

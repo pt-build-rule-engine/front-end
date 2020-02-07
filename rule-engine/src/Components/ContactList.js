@@ -34,7 +34,6 @@ const ContactList = (props) => {
 //     }, [props.searchArg]);
     // if (!characters) return (<p>Loading...</p>)
 
-
     useEffect(()=>{
         props.getContacts()
     },[])
@@ -54,6 +53,7 @@ const ContactList = (props) => {
                         key={item.id} 
                         item={item}
                         deleteContact={props.deleteContact}
+                        getContacts={props.getContacts}
                     />
                 );
             })}
