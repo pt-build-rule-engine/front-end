@@ -25,6 +25,7 @@ const AddForm = (props) => {
 
     return (
         <div>
+            <br/>
             <h2>Add Contact</h2>
             <form onSubmit={handleSubmit}>
                 <input
@@ -50,12 +51,9 @@ const AddForm = (props) => {
                 />
                 <button>Submit</button>
             </form>
+            <br/>
         </div>
     );
 };
-
-// const mapStateToProps = (state) =>{
-
-// }
 
 export default connect(null, { addContact })(AddForm);

@@ -32,7 +32,7 @@ const NavBar = () => {
                            <NavLink href="/directory">Directory</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/addform">Add Form</NavLink>
+                        <NavLink href="/addform">Add Contact</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

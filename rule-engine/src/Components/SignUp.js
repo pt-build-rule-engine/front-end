@@ -34,6 +34,30 @@ const SignUp = (props) => {
     return (
         <div className="Login">
           <form onSubmit={handleSubmit}>
+            <FormGroup controlId="name" bsSize="large">
+              <FormLabel>Name</FormLabel>
+              <FormControl
+                value={name}
+                onChange={e => setName(e.target.value)}
+                type="name"
+              />
+            </FormGroup>
+            <FormGroup controlId="companyName:" bsSize="large">
+              <FormLabel>Company Name</FormLabel>
+              <FormControl
+                value={companyName}
+                onChange={e => setCompanyName(e.target.value)}
+                type="companyName"
+              />
+            </FormGroup>
+            <FormGroup controlId="password" bsSize="large">
+              <FormLabel>Phone Number</FormLabel>
+              <FormControl
+                value={phoneNumber}
+                onChange={e => setPhoneNumber(e.target.value)}
+                type="phoneNumber"
+              />
+            </FormGroup>
             <FormGroup controlId="email" bsSize="large">
               <FormLabel>Email</FormLabel>
               <FormControl
@@ -49,30 +73,6 @@ const SignUp = (props) => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 type="password"
-              />
-            </FormGroup>
-            <FormGroup controlId="name" bsSize="large">
-              <FormLabel>Name</FormLabel>
-              <FormControl
-                value={name}
-                onChange={e => setName(e.target.value)}
-                type="name"
-              />
-            </FormGroup>
-            <FormGroup controlId="companyName" bsSize="large">
-              <FormLabel>CompanyName</FormLabel>
-              <FormControl
-                value={companyName}
-                onChange={e => setCompanyName(e.target.value)}
-                type="companyName"
-              />
-            </FormGroup>
-            <FormGroup controlId="password" bsSize="large">
-              <FormLabel>phoneNumber</FormLabel>
-              <FormControl
-                value={phoneNumber}
-                onChange={e => setPhoneNumber(e.target.value)}
-                type="phoneNumber"
               />
             </FormGroup>
             <Button block bsSize="large" disabled={!validateForm()} type="submit">
