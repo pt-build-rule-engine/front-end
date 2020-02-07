@@ -10,7 +10,7 @@ export const getContacts = () => dispatch => {
 
     api().get("/api/contacts")
         .then(res => {
-            // console.log(res.data)
+            console.log('from reducer: ', res.data)
             dispatch({ type: GET_SUCCESS, payload: res.data });
         })
         .catch(err => {

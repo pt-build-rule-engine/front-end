@@ -3,6 +3,8 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { withFormik, Form, Field, yupToFormErrors, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { connect } from 'react-redux';
+import { signup } from '../Actions/SignUp';
 
 const SignUp = (props) => {
 
@@ -108,4 +110,4 @@ const enhancedForm = withFormik ({
     })
 })(SignUp);
 
-export default SignUp;
+export default connect(null, { signup })(SignUp);
