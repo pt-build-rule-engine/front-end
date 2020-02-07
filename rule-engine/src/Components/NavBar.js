@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavbarBrand, Nav, NavItem, NavLink, Collapse, NavbarToggler, Navbar, Button } from "reactstrap";
 import logo from '../Images/streemly_logo.png';
 import icon from '../Images/hamburger_icon.png';
+import { getToken } from '../Utls/api';
 
 const NavBar = () => {
 
@@ -12,7 +13,7 @@ const NavBar = () => {
         console.log(collapsed);
         setCollapsed(collapsed);
     }
-
+    
     return (
         <div>
             <Navbar className="streemly-red">
