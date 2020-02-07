@@ -22,14 +22,14 @@ const NavBar = () => {
                 </NavbarToggler>
                 <Collapse isOpen={collapsed} onClick={menuClick}>
                     <Nav navbar>
+                    <NavItem className="streemly-red2">
+                            <NavLink href="/signup">Sign Up</NavLink>
+                        </NavItem>
                         <NavItem className="streemly-red2">
                             <NavLink href="/login">Login</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/logout">Log Out</NavLink>
-                        </NavItem>
-                        <NavItem className="streemly-red2">
-                            <NavLink href="/signup">Sign Up</NavLink>
                         </NavItem>
                         <NavItem className="streemly-red2">
                             <NavLink href="/directory">Directory</NavLink>
