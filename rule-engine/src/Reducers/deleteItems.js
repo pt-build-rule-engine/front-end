@@ -5,7 +5,6 @@ import {
 } from '../Actions/deleteContact';
 
 const initialState = {
-    deletedItem: {},
     isLoading: false,
     error: null
 };
@@ -21,7 +20,6 @@ export function reducer(state = initialState, action) {
         case DELETE_SUCCESS: 
             return {
                 ...state,
-                deletedItem: action.payload,
                 isLoading: false
             };
         case DELETE_ERROR: 

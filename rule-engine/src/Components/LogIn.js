@@ -20,7 +20,7 @@ const Login = (props) => {
       password: password,
     };
     props.login(credentials)
-    props.history.push('/contacts')
+    props.history.push('/directory')
   }
 
   return (

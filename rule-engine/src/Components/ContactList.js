@@ -34,7 +34,6 @@ const ContactList = (props) => {
 //     }, [props.searchArg]);
     // if (!characters) return (<p>Loading...</p>)
 
-
     useEffect(()=>{
         props.getContacts()
     },[])
@@ -46,14 +45,15 @@ const ContactList = (props) => {
             contacts={props.contacts}
             />
             {props.contacts.map((item) => {
-                console.log('props.contacts: ', props.contacts)
-                console.log("creating character card for ", item)
+                // console.log('props.contacts: ', props.contacts)
+                // console.log("creating character card for ", item)
                 
                 return (
                     <ContactCard 
                         key={item.id} 
                         item={item}
                         deleteContact={props.deleteContact}
+                        getContacts={props.getContacts}
                     />
                 );
             })}

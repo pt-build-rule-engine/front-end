@@ -5,11 +5,11 @@ import {
 } from '../Actions/addContact';
 
 const initialState = {
-    addedItem: {
-        name: '',
-        company: '',
-        email: ''
-    },
+    // addedItem: {
+    //     name: '',
+    //     company: '',
+    //     email: ''
+    // },
     isLoading: false,
     error: null
 };
@@ -24,7 +24,7 @@ export function reducer(state = initialState, action) {
         case ADD_SUCCESS: 
             return {
                 ...state,
-                addedItem: action.payload,
+                // addedItem: action.payload,
                 isLoading: false
             };
         case ADD_ERROR: 
