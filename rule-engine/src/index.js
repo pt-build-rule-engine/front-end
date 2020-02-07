@@ -15,6 +15,7 @@ import { reducer as deleteReducer } from './Reducers/deleteItems';
 import { reducer as getReducer } from './Reducers/getContacts';
 import { reducer as editReducer } from './Reducers/editContact';
 import { reducer as getIndReducer } from './Reducers/getIndContact';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

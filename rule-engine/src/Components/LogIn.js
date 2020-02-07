@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { login } from '../Actions/Login';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import styled from 'styled-components';
+
 import "../App.css";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -50,5 +51,8 @@ const Login = (props) => {
     </div>
   );
 }
+
+
+
 
 export default connect(null, {login})(Login)
