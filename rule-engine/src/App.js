@@ -20,7 +20,7 @@ function App() {
       <Route path="/login"  render={(props=><LogIn {...props}/>)}/>
       <PrivateRoute path="/logout"  component={LogOut} />
       <PrivateRoute path="/addform"  component={Addform} />
-      <PrivateRoute path="/directory"  component={ContactList} />
+      <Route path="/directory"  component={ContactList} />
       <PrivateRoute path="/edit-contact/:id"  component={EditForm} />
       <Route path='/' component={Footer}/>
     </main>

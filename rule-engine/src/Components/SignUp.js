@@ -16,7 +16,7 @@ const SignUp = (props) => {
 
         const validateForm = () =>  {
             return email.length > 0 && password.length > 0 && phoneNumber > 0 && name > 0 && companyName > 0;
-          }
+        }
 
         const handleSubmit = event =>  {
             event.preventDefault();
