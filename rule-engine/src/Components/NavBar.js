@@ -13,8 +13,10 @@ const NavBar = () => {
         console.log(collapsed);
         setCollapsed(collapsed);
     }
-    
+    const loggedIn = getToken()
+
     return (
+
         <div>
             <Navbar className="streemly-red">
                 <NavbarBrand href="/contacts" className="mr-auto"><img className="streemly-logo" src={logo} width='120' height='50' alt="guider logo" /></NavbarBrand>
@@ -23,21 +25,26 @@ const NavBar = () => {
                 </NavbarToggler>
                 <Collapse isOpen={collapsed} onClick={menuClick}>
                     <Nav navbar>
-                    <NavItem className="streemly-red2">
-                            <NavLink href="/signup">Sign Up</NavLink>
-                        </NavItem>
+                        {!loggedIn && 
+                            <NavItem className="streemly-red2">
+                                <NavLink href="/signup">Sign Up</NavLink>
+                            </NavItem>}
+                        {!loggedIn &&
                         <NavItem className="streemly-red2">
                             <NavLink href="/login">Login</NavLink>
-                        </NavItem>
+                        </NavItem>}
+                        {loggedIn &&
                         <NavItem>
                             <NavLink href="/logout">Log Out</NavLink>
-                        </NavItem>
+                        </NavItem>}
+                        {loggedIn &&
                         <NavItem className="streemly-red2">
                             <NavLink href="/directory">Directory</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/addform">Add Contact</NavLink>
-                        </NavItem>
+                        </NavItem>}
+                        {loggedIn &&
+                            <NavItem>
+                                <NavLink href="/addform">Add Contact</NavLink>
+                            </NavItem>}
                     </Nav>
                 </Collapse>
             </Navbar>
