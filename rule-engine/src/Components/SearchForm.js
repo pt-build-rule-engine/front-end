@@ -32,8 +32,8 @@ const SearchForm = (props) => {
     );
 }
 
-// const results = searchTerm.filter(datum=>datum.name.tolowerCase().includes(values.lowerCase()));
-// setSearchTerm(results);
+ /*const results = setSearchTerm.filter(datum=>datum.name.tolowerCase().includes(values.lowerCase()));
+ /*setSearchTerm(results);*/
 
 const FormikSearchForm = withFormik({
     mapPropsToValues({ search }) {
@@ -42,8 +42,8 @@ const FormikSearchForm = withFormik({
         };
     },
 
-    handleSubmit(values, { dispatch }) {
-        dispatch(values);
+    handleSubmit(values, { contacts }) {
+        contacts(values);
     }
 
 })(SearchForm);
