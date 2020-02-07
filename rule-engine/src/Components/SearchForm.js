@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { withFormik, Form, Field } from "formik";
-import styled from 'styled-components';
 
 
 const SearchForm = (props) => {
