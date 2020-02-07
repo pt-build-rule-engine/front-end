@@ -10,7 +10,7 @@ const api = () => {
     return axios.create({
         baseURL: 'https://bw-rule-engine.herokuapp.com',
         headers: {
-            Authorization: getToken(),
+            token: getToken(),
         }
     })
 };

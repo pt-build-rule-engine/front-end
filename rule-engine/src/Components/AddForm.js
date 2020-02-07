@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const AddForm = (props) => {
 
     const [newContact, setNewContact] = useState({
-        company: '',
+        companyName: '',
         name: '',
         email: ''
     })
@@ -20,6 +20,7 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault()
         props.addContact(newContact)
+        props.history.push('/directory')
     }
 
     return (
@@ -27,10 +28,10 @@ const AddForm = (props) => {
             <h2>Add Contact</h2>
             <form onSubmit={handleSubmit}>
                 <input
-                    name='company'
+                    name='companyName'
                     type='text'
-                    value={newContact.company}
-                    placeholder='Company'
+                    value={newContact.companyName}
+                    placeholder='Company name'
                     onChange={handleChange}
                 />
                 <input
@@ -47,6 +48,7 @@ const AddForm = (props) => {
                     placeholder='Name'
                     onChange={handleChange}
                 />
+                <button>Submit</button>
             </form>
         </div>
     );

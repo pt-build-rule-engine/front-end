@@ -12,8 +12,6 @@ export const signup = (credentials) => dispatch => {
     api().post("/api/auth/register", credentials)
         .then(res => {
             dispatch({ type: SIGNUP_SUCCESS, payload: res.data })
-            // localStorage.setItem("token", res.data.token);
-            // localStorage.setItem("user_id", res.data.new_user.id);
         })
         .catch(err =>{
             dispatch({ type: SIGNUP_ERROR, payload: err.error })

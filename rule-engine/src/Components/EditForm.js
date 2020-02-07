@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { editContact } from '../Actions/editContact';
 import { getIndContact } from '../Actions/getIndContact';
 import { connect } from 'react-redux';
+import ContactList from './ContactList';
 
 const EditForm = (props) => {
 
@@ -11,9 +12,18 @@ const EditForm = (props) => {
         email: ''
     })
 
+    const [id, setID ] = useState(props.match.params.id)
+
+    console.log('id: ', id)
+
     useEffect(()=>{
-        setEditedContact(props.getIndContact(props.match.params.id))
+        const card = props.contacts.filter(contact=>{
+            return contact.id === id ? contact: null
+        })
+        console.log('from edit: ', card)
+        setEditedContact(card)
     },[])
+
 
     const handleChange = e => {
         setEditedContact({
@@ -24,7 +34,8 @@ const EditForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        props.editContact(editedContact)
+        props.editContact(id, editedContact)
+        props.history.push('/directory')
     }
 
     return (
@@ -52,13 +63,14 @@ const EditForm = (props) => {
                     placeholder='Name'
                     onChange={handleChange}
                 />
+                <button>Submit</button>
             </form>
         </div>
     );
 };
 
-// const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
+    return {contacts: state.contacts.contacts}
+};
 
-// }
-
-export default connect(null, { editContact, getIndContact })(EditForm);
+export default connect(mapStateToProps, { editContact, getIndContact })(EditForm);
