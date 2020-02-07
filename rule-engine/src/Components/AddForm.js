@@ -24,6 +24,7 @@ const AddForm = (props) => {
 
     return (
         <div>
+            <br/>
             <h2>Add Contact</h2>
             <form onSubmit={handleSubmit}>
                 <input
@@ -48,6 +49,7 @@ const AddForm = (props) => {
                     onChange={handleChange}
                 />
             </form>
+            <br/>
         </div>
     );
 };

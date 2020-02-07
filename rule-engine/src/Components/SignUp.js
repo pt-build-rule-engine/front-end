@@ -34,23 +34,6 @@ const SignUp = (props) => {
     return (
         <div className="Login">
           <form onSubmit={handleSubmit}>
-            <FormGroup controlId="email" bsSize="large">
-              <FormLabel>Email</FormLabel>
-              <FormControl
-                autoFocus
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-              />
-            </FormGroup>
-            <FormGroup controlId="password" bsSize="large">
-              <FormLabel>Password</FormLabel>
-              <FormControl
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                type="password"
-              />
-            </FormGroup>
             <FormGroup controlId="name" bsSize="large">
               <FormLabel>Name</FormLabel>
               <FormControl
@@ -73,6 +56,23 @@ const SignUp = (props) => {
                 value={phoneNumber}
                 onChange={e => setPhoneNumber(e.target.value)}
                 type="phoneNumber"
+              />
+            </FormGroup>
+            <FormGroup controlId="email" bsSize="large">
+              <FormLabel>Email</FormLabel>
+              <FormControl
+                autoFocus
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </FormGroup>
+            <FormGroup controlId="password" bsSize="large">
+              <FormLabel>Password</FormLabel>
+              <FormControl
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type="password"
               />
             </FormGroup>
             <Button block bsSize="large" disabled={!validateForm()} type="submit">
