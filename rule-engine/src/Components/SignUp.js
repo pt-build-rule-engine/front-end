@@ -59,8 +59,8 @@ const SignUp = (props) => {
                 type="name"
               />
             </FormGroup>
-            <FormGroup controlId="companyName" bsSize="large">
-              <FormLabel>CompanyName</FormLabel>
+            <FormGroup controlId="companyName:" bsSize="large">
+              <FormLabel>Company Name</FormLabel>
               <FormControl
                 value={companyName}
                 onChange={e => setCompanyName(e.target.value)}
@@ -68,7 +68,7 @@ const SignUp = (props) => {
               />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
-              <FormLabel>phoneNumber</FormLabel>
+              <FormLabel>Phone Number</FormLabel>
               <FormControl
                 value={phoneNumber}
                 onChange={e => setPhoneNumber(e.target.value)}

@@ -52,8 +52,4 @@ const AddForm = (props) => {
     );
 };
 
-// const mapStateToProps = (state) =>{
-
-// }
-
 export default connect(null, { addContact })(AddForm);

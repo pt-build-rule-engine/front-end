@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar.js";
 import SignUp from "./Components/SignUp.js";
 import PrivateRoute from './Components/PrivateRoute';
 import EditForm from './Components/EditForm';
+import Footer from './Components/Footer';
 import './App.css';
 
 /*-*/
@@ -21,6 +22,7 @@ function App() {
       <PrivateRoute path="/addform"  component={Addform} />
       <PrivateRoute path="/directory"  component={ContactList} />
       <PrivateRoute path="/edit-contact/:id"  component={EditForm} />
+      <Route path='/' component={Footer}/>
     </main>
   );
 }
