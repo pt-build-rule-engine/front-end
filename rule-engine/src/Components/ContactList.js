@@ -46,8 +46,8 @@ const ContactList = (props) => {
             contacts={props.contacts}
             />
             {props.contacts.map((item) => {
-                console.log('props.contacts: ', props.contacts)
-                console.log("creating character card for ", item)
+                // console.log('props.contacts: ', props.contacts)
+                // console.log("creating character card for ", item)
                 
                 return (
                     <ContactCard 

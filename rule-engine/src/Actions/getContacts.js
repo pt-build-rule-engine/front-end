@@ -14,6 +14,6 @@ export const getContacts = () => dispatch => {
             dispatch({ type: GET_SUCCESS, payload: res.data });
         })
         .catch(err => {
-            dispatch({ type: GET_ERROR, payload: err.error });
+            dispatch({ type: GET_ERROR, payload: err.response });
         })
 };
