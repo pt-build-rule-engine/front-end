@@ -16,12 +16,14 @@ function App() {
   return (
     <main>
       <Route path='/' component={NavBar}/>
-      <Route path="/signup"  component={SignUp} />
+      <Route path="/signup"  render={(props=><SignUp {...props}/>)}/>
       <Route path="/login"  render={(props=><LogIn {...props}/>)}/>
       <PrivateRoute path="/logout"  component={LogOut} />
       <PrivateRoute path="/addform"  component={Addform} />
-      <PrivateRoute path="/directory"  component={ContactList} />
+      <Route path="/directory"  component={ContactList} />
       <PrivateRoute path="/edit-contact/:id"  component={EditForm} />
+      {/*<Route path='/' component={Footer}/>*/}
+      <Route path='/' component={Footer}/>
     </main>
   );
 }
