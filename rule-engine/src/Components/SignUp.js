@@ -28,7 +28,7 @@ const SignUp = (props) => {
               companyName: companyName,
             };
             props.login(credentials)
-            props.history.push('/contacts')
+            props.history.push('/directory')
           }
 
     return (
