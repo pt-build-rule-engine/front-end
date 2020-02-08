@@ -18,17 +18,18 @@ const SignUp = (props) => {
             return email.length > 0 && password.length > 0 && phoneNumber > 0 && name > 0 && companyName > 0;
         }
 
-        const handleSubmit = event =>  {
+        const handleSubmit = event => {
             event.preventDefault();
             const credentials = {
               email: email,
               password: password,
               phoneNumber: phoneNumber,
               name: name,
-              companyName: companyName,
+              company: companyName,
             };
-            props.login(credentials)
-            props.history.push('/directory')
+            props.signup(credentials)
+            console.log('logging from signup handlesubmit', credentials)
+            props.history.push('/login')
           }
 
     return (
@@ -75,9 +76,10 @@ const SignUp = (props) => {
                 type="password"
               />
             </FormGroup>
-            <Button block bsSize="large" disabled={!validateForm()} type="submit">
+            <button type='submit'>Submit</button>
+            {/*<Button block bsSize="large" disabled={!validateForm()} type="submit">
               SignUp
-            </Button>
+            </Button>*/}
           </form>
         </div>
       );
