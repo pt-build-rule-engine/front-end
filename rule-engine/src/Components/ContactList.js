@@ -34,7 +34,7 @@ const ContactList = (props) => {
 //     }, [props.searchArg]);
     // if (!characters) return (<p>Loading...</p>)
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         props.getContacts()
     },[])
 

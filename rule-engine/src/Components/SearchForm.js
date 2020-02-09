@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { withFormik, Form, Field } from "formik";
-
 
 const SearchForm = (props) => {
 
@@ -11,11 +9,16 @@ const SearchForm = (props) => {
     padding-top: 20px;
     `;
 
-    const [searchTerm, setSearchTerm] = useState(props.contacts);
+    const changeHandler = (event) => {
 
-    // useEffect(() => {
-    //     setSearchTerm(props.contacts);
-    // }, [props.contacts]);
+        let newState = props.contacts.filter(contact => {
+            return contact.name.includes(event.target.value);
+        })
+    }
+
+    const handleSubmission = event => {
+        event.preventDefault();
+    }
 
     let errorStyle = {
         color: "red"
@@ -23,30 +26,13 @@ const SearchForm = (props) => {
 
     return (
         <div>
-        <StyledDiv>
-            <Form>
-                <Field type="text" name="search" placeholder="Search..." />
-            </Form>
-        </StyledDiv>
+            <StyledDiv>
+                <form onSubmit={handleSubmission}>
+                    <input type="text" name="search" onChange={event => changeHandler(event)} placeholder="Search..." />
+                </form>
+            </StyledDiv>
         </div>
     );
 }
 
-// const results = searchTerm.filter(datum=>datum.name.tolowerCase().includes(values.lowerCase()));
-// setSearchTerm(results);
-
-const FormikSearchForm = withFormik({
-    mapPropsToValues({ search }) {
-        return {
-            search: search || "",
-        };
-    },
-
-    handleSubmit(values, { dispatch }) {
-        dispatch(values);
-    }
-
-})(SearchForm);
-
-
-export default FormikSearchForm;
+export default SearchForm;
