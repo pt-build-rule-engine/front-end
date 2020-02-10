@@ -25,26 +25,31 @@ const NavBar = () => {
                 </NavbarToggler>
                 <Collapse isOpen={collapsed} onClick={menuClick}>
                     <Nav navbar>
-                        {!loggedIn && 
+                        {!loggedIn &&
                             <NavItem className="streemly-red2">
                                 <NavLink href="/signup">Sign Up</NavLink>
                             </NavItem>}
                         {!loggedIn &&
-                        <NavItem className="streemly-red2">
-                            <NavLink href="/login">Login</NavLink>
-                        </NavItem>}
+                            <NavItem className="streemly-red2">
+                                <NavLink href="/login">Login</NavLink>
+                            </NavItem>}
                         {loggedIn &&
-                        <NavItem>
-                            <NavLink href="/logout">Log Out</NavLink>
-                        </NavItem>}
+                            <NavItem>
+                                <NavLink href="/logout">Log Out</NavLink>
+                            </NavItem>}
                         {loggedIn &&
-                        <NavItem className="streemly-red2">
-                            <NavLink href="/directory">Directory</NavLink>
-                        </NavItem>}
+                            <NavItem className="streemly-red2">
+                                <NavLink href="/directory">Directory</NavLink>
+                            </NavItem>}
                         {loggedIn &&
                             <NavItem>
                                 <NavLink href="/addform">Add Contact</NavLink>
                             </NavItem>}
+                        {!loggedIn &&
+                            <NavItem>
+                                <NavLink href="https://rule-engine-logictree.netlify.com/index.html">Marketing Page</NavLink>
+                            </NavItem>
+                        }
                     </Nav>
                 </Collapse>
             </Navbar>
