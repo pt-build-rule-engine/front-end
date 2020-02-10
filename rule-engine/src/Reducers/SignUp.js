@@ -7,7 +7,7 @@ import {
 const initialState = {
     newUser: {
         name: '',
-        company: '',
+        companyName: '',
         email: '',
         phoneNumber: '',
         password: ''
