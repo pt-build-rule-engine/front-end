@@ -53,18 +53,6 @@ const Footer = (props) => {
                 <MDBCol md="3" lg="2" xl="2" className="mb-4 dark-grey-text">
     
                 </MDBCol>
-                <MDBCol md="6" lg="4" xl="2" className="mb-4 pt-5 dark-grey-text text-right">
-    
-    
-                    <Link to='/login'>Login</Link>{' | '}
-    
-                    <Link to='/signup/'>Sign Up </Link>{' | '}
-    
-                    <Link to='/directory/'>Directory</Link>{' | '}
-
-                    <Link to="/addform">Add Contact</Link>
-    
-                </MDBCol>
               </MDBRow>
             </MDBContainer>
           </MDBFooter>
