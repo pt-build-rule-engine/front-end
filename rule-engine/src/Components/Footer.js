@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 import logo from '../Images/streemly_logo.png'
@@ -44,23 +44,13 @@ const Footer = (props) => {
     
                   <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
                   <p>
-                    <Link to='/'><img src={logo} alt="guider logo" className="footer-logo" /></Link>
+                    <Link to='/'><img src={logo} alt="streemly logo" className="footer-logo" /></Link>
                   </p>
                 </MDBCol>
                 <MDBCol md="2" lg="2" xl="2" className="mb-4 dark-grey-text">
     
                 </MDBCol>
                 <MDBCol md="3" lg="2" xl="2" className="mb-4 dark-grey-text">
-    
-                </MDBCol>
-                <MDBCol md="6" lg="4" xl="2" className="mb-4 pt-5 dark-grey-text text-right">
-    
-    
-                    <Link to='/'>Home</Link>{' | '}
-    
-                    <Link to='/profile/'>Profile</Link>{' | '}
-    
-                    <Link to='/trips/'>Trips</Link>
     
                 </MDBCol>
               </MDBRow>

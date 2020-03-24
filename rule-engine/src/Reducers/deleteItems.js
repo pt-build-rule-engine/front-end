@@ -5,23 +5,24 @@ import {
 } from '../Actions/deleteContact';
 
 const initialState = {
-    deletedItem: {},
+    doneLoading: false,
     isLoading: false,
     error: null
 };
 
-export function reducer(state = initialState, action) {
+export function reducer (state = initialState, action) {
     switch (action.type) {
         case DELETE_START:
             return {
                 ...state,
                 isLoading: true, 
-                error: null
+                error: null,
+                doneLoading: false
             };
         case DELETE_SUCCESS: 
             return {
                 ...state,
-                deletedItem: action.payload,
+                doneLoading: true,
                 isLoading: false
             };
         case DELETE_ERROR: 

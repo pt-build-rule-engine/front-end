@@ -4,10 +4,10 @@ export const EDIT_START = "EDIT_START"
 export const EDIT_SUCCESS = "EDIT_SUCCESS"
 export const EDIT_ERROR = "EDIT_ERROR"
 
-export const editContact = (editedItem) => dispatch => {
+export const editContact = (id, editedItem) => dispatch => {
     dispatch({ type: EDIT_START });
 
-    api().put(`/users/${localStorage.getItem("user_id")}`, editedItem)
+    api().put(`/api/contacts/${id}`, editedItem)
     .then(res => {
         dispatch({ type: EDIT_SUCCESS, payload: res.data })
         console.log(res.data)
